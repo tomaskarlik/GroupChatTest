@@ -1,0 +1,17 @@
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio cache/options directory
+.vs/
+
+# Others
+node_modules/
+Properties/PublishProfiles/
+wwwroot/lib/
