@@ -12,20 +12,28 @@ document.getElementById("connect").addEventListener("click", function (event) {
         .build();
 
     connection.on("ReceiveMessage", function (label, message, notify) {
-        var encodedMsg = label + ": " + message;
-        var li = document.createElement("li");
-        li.textContent = encodedMsg;
-        document.getElementById("messagesList").appendChild(li);
+        var div = document.createElement("div");
+        div.className = "chatListItem2";
+        var h = document.createElement("h5");
+        h.textContent = label;
+        div.appendChild(h);
+        var p = document.createElement("p");
+        div.appendChild(p);
+        p.textContent = message;
+        document.getElementById("messagesList").appendChild(div);
+
         if (notify == "true") {
             notifyUser("Zpráva od " + label);
         }
     });
 
     connection.on("ReceiveMessageFromMe", function (message) {
-        var li = document.createElement("li");
-        var msg = li.appendChild(document.createElement("i"));
-        msg.textContent = message;
-        document.getElementById("messagesList").appendChild(li);
+        var div = document.createElement("div");
+        div.className = "chatListItem1";
+        var p = document.createElement("p");
+        div.appendChild(p);
+        p.textContent = message;                
+        document.getElementById("messagesList").appendChild(div);
     });
 
     connection.start().catch(function (err) {

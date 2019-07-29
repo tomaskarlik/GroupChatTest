@@ -11,11 +11,38 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.1.0" />
   </ItemGroup>
 
+   <ItemGroup>
+     <Folder Include="wwwroot\css\">
+       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+     </Folder>
+     <Folder Include="wwwroot\js\">
+       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+     </Folder>
+   </ItemGroup>
+
   <Target Name="CopySignalR" BeforeTargets="AfterBuild">
     <ItemGroup>
       <SignalRJSClientFiles Include="$(MSBuildThisFileDirectory)node_modules\@aspnet\signalr\dist\browser\*" />
     </ItemGroup>
     <Copy SourceFiles="@(SignalRJSClientFiles)" DestinationFolder="$(MSBuildThisFileDirectory)wwwroot\lib\signalr" />
+  </Target>
+  
+  <Target Name="CopyBootstrap" BeforeTargets="AfterBuild">  
+    <ItemGroup>
+      <BootstrapFilesCss Include="$(MSBuildThisFileDirectory)node_modules\bootstrap\dist\css\*.min.*" />
+      <BootstrapFilesFonts Include="$(MSBuildThisFileDirectory)node_modules\bootstrap\dist\fonts\*" />
+      <BootstrapFilesJs Include="$(MSBuildThisFileDirectory)node_modules\bootstrap\dist\js\*.min.*" />
+    </ItemGroup> 
+    <Copy SourceFiles="@(BootstrapFilesCss)" DestinationFolder="$(MSBuildThisFileDirectory)wwwroot\lib\bootstrap\css" />
+    <Copy SourceFiles="@(BootstrapFilesFonts)" DestinationFolder="$(MSBuildThisFileDirectory)wwwroot\lib\bootstrap\fonts" />
+    <Copy SourceFiles="@(BootstrapFilesJs)" DestinationFolder="$(MSBuildThisFileDirectory)wwwroot\lib\bootstrap\js" />
+  </Target>
+
+   <Target Name="CopyJQuery" BeforeTargets="AfterBuild">
+    <ItemGroup>
+      <JQueryFiles Include="$(MSBuildThisFileDirectory)node_modules\jquery\dist\*.min.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(JQueryFiles)" DestinationFolder="$(MSBuildThisFileDirectory)wwwroot\lib\jquery" />
   </Target>
 
 </Project>

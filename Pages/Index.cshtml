@@ -2,24 +2,32 @@
 @{
     ViewData["Title"] = "Welcome";
 }
-Uživatel: <select id="groupId">
-    <option value="groupA">Group A</option>
-    <option value="groupB">Group B</option>
-    <option value="groupC">Group C</option>
-    <option value="groupD">Group D</option>
-</select>
-<br />
-Uživatel: <input type="text" id="user" value="" required />
-<br />
-<input type="button" id="connect" value="Připojit" />
-<br />
-Zpráva:
-<br />
-<textarea id="messageInput" required></textarea>
-<br />
-<input type="button" id="sendButton" value="Odeslat" />
-<br>
-<ul id="messagesList"></ul>
+<div class="messaging">
 
-<script src="~/lib/signalr/signalr.js"></script>
+    Uživatel: <select id="groupId">
+        <option value="groupA">Group A</option>
+        <option value="groupB">Group B</option>
+        <option value="groupC">Group C</option>
+        <option value="groupD">Group D</option>
+    </select>
+    <br />
+    Uživatel: <input type="text" id="user" value="" required />
+    <br />
+    <input type="button" id="connect" value="Připojit" />
+    <br />
+
+    <div class="messagesListParent">
+        <div id="messagesList"></div>        
+        <!-- ------ -->
+        <div class="typeMessage">
+            <div class="input_msg_write">
+                <input type="text" placeholder="Napíšte zprávu" id="messageInput" required />
+                <button id="sendButton" type="button">Odeslat</button>
+            </div>
+        </div>
+        <!-- ------ -->
+    </div>
+</div>
+
+<script src="~/lib/signalr/signalr.min.js"></script>
 <script src="~/js/chat.js"></script>

@@ -1,0 +1,70 @@
+﻿.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.messaging {
+    padding: 0 0 50px 0;
+}
+
+.typeMessage {
+    border-top: 1px solid #c4c4c4;
+    position: relative;
+}
+
+#sendButton {
+    background: #05728f none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 50%;
+    color: #fff;
+    height: 33px;
+    position: absolute;
+    right: 0;
+    top: 11px;
+    width: 33px;
+}
+
+.typeMessage input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    color: #4c4c4c;
+    font-size: 15px;
+    min-height: 48px;
+    width: 100%;
+}
+
+.messagesListParent {
+    overflow-y: scroll;
+}
+
+.chatListItem1, .chatListItem2 {
+    border-bottom: 1px solid #c4c4c4;
+    margin: 0;
+    padding: 18px 16px 10px;
+}
+
+.chatListItem1 p, .chatListItem2 p {
+        border-radius: 3px;
+        font-size: 14px;
+        margin: 0;
+        padding: 5px 10px 5px 12px;
+        text-align: left;
+        width: 50%;
+    }
+
+.chatListItem1 p {
+    background-color: #05728f;
+    color: #fff;
+    margin-left: 50%;
+}
+
+.chatListItem2 p {
+    background-color: #ebebeb;
+    color: #646464;
+}
+
+.chatListItem h5 {
+    font-size: 15px;
+    color: #464646;
+    margin: 0 0 8px 0;
+}
